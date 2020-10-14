@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="robots" content="noindex">
+<title>Exportar: proyecto - Adminer</title>
+<link rel="stylesheet" type="text/css" href="adminer.php?file=default.css&amp;version=4.7.1">
+<script src='adminer.php?file=functions.js&amp;version=4.7.1' nonce="MDk1Y2I2Zjk0NGY4MzYxNjg5NDBkZGIwYjc3MDRhNzY="></script>
+<link rel="shortcut icon" type="image/x-icon" href="adminer.php?file=favicon.ico&amp;version=4.7.1">
+<link rel="apple-touch-icon" href="adminer.php?file=favicon.ico&amp;version=4.7.1">
+<link rel="stylesheet" type="text/css" href="adminer.css">
+
+<body class="ltr nojs">
+<script nonce="MDk1Y2I2Zjk0NGY4MzYxNjg5NDBkZGIwYjc3MDRhNzY=">
+mixin(document.body, {onkeydown: bodyKeydown, onclick: bodyClick});
+document.body.className = document.body.className.replace(/ nojs/, ' js');
+var offlineMessage = 'You are offline.';
+var thousandsSeparator = ' ';
+</script>
+
+<div id="help" class="jush-sql jsonly hidden"></div>
+<script nonce="MDk1Y2I2Zjk0NGY4MzYxNjg5NDBkZGIwYjc3MDRhNzY=">mixin(qs('#help'), {onmouseover: function () { helpOpen = 1; }, onmouseout: helpMouseout});</script>
+
+<div id="content">
+<p id="breadcrumb"><a href="adminer.php">MySQL</a> &raquo; <a href='adminer.php?username=root' accesskey='1' title='Alt+Shift+1'>Servidor</a> &raquo; <a href="adminer.php?username=root&amp;db=proyecto">proyecto</a> &raquo; Exportar
+<h2>Exportar: proyecto</h2>
+<div id='ajaxstatus' class='jsonly hidden'></div>
+
+<form action="" method="post">
+<table cellspacing="0" class="layout">
+<tr><th>Salida<td><label><input type='radio' name='output' value='text' checked>mostrar</label><label><input type='radio' name='output' value='file'>archivo</label><label><input type='radio' name='output' value='gz'>gzip</label>
+<tr><th>Formato<td><label><input type='radio' name='format' value='sql' checked>SQL</label><label><input type='radio' name='format' value='csv'>CSV,</label><label><input type='radio' name='format' value='csv;'>CSV;</label><label><input type='radio' name='format' value='tsv'>TSV</label>
+<tr><th>Base de datos<td><select name='db_style'><option selected><option>USE<option>DROP+CREATE<option>CREATE</select><label><input type='checkbox' name='routines' value='1' checked>Procedimientos</label><label><input type='checkbox' name='events' value='1' checked>Eventos</label><tr><th>Tablas<td><select name='table_style'><option><option selected>DROP+CREATE<option>CREATE</select><label><input type='checkbox' name='auto_increment' value='1'>Incremento automático</label><label><input type='checkbox' name='triggers' value='1' checked>Disparadores</label><tr><th>Datos<td><select name='data_style'><option><option>TRUNCATE+INSERT<option selected>INSERT<option>INSERT+UPDATE</select></table>
+<p><input type="submit" value="Exportar">
+<input type="hidden" name="token" value="609469:321365">
+
+<table cellspacing="0">
+<script nonce="MDk1Y2I2Zjk0NGY4MzYxNjg5NDBkZGIwYjc3MDRhNzY=">qsl('table').onclick = dumpClick;</script>
+<thead><tr><th style='text-align: left;'><label class='block'><input type='checkbox' id='check-tables' checked>Tablas</label><script nonce="MDk1Y2I2Zjk0NGY4MzYxNjg5NDBkZGIwYjc3MDRhNzY=">qs('#check-tables').onclick = partial(formCheck, /^tables\[/);</script><th style='text-align: right;'><label class='block'>Datos<input type='checkbox' id='check-data' checked></label><script nonce="MDk1Y2I2Zjk0NGY4MzYxNjg5NDBkZGIwYjc3MDRhNzY=">qs('#check-data').onclick = partial(formCheck, /^data\[/);</script></thead>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='material_bibliografico' checked>material_bibliografico</label><td align='right'><label class='block'><span id='Rows-material_bibliografico'></span><input type='checkbox' name='data[]' value='material_bibliografico' checked></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='multa' checked>multa</label><td align='right'><label class='block'><span id='Rows-multa'></span><input type='checkbox' name='data[]' value='multa' checked></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='prestamo' checked>prestamo</label><td align='right'><label class='block'><span id='Rows-prestamo'></span><input type='checkbox' name='data[]' value='prestamo' checked></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='prolongar' checked>prolongar</label><td align='right'><label class='block'><span id='Rows-prolongar'></span><input type='checkbox' name='data[]' value='prolongar' checked></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='solicitud' checked>solicitud</label><td align='right'><label class='block'><span id='Rows-solicitud'></span><input type='checkbox' name='data[]' value='solicitud' checked></label>
+<tr><td><label class='block'><input type='checkbox' name='tables[]' value='usuarios' checked>usuarios</label><td align='right'><label class='block'><span id='Rows-usuarios'></span><input type='checkbox' name='data[]' value='usuarios' checked></label>
+<script nonce="MDk1Y2I2Zjk0NGY4MzYxNjg5NDBkZGIwYjc3MDRhNzY=">ajaxSetHtml('adminer.php?username=root&db=proyecto&script=db');</script>
+</table>
+</form>
+</div>
+
+<form action='' method='post'>
+<div id='lang'>Idioma: <select name='lang'><option value="en">English<option value="ar">العربية<option value="bg">Български<option value="bn">বাংলা<option value="bs">Bosanski<option value="ca">Català<option value="cs">Čeština<option value="da">Dansk<option value="de">Deutsch<option value="el">Ελληνικά<option value="es" selected>Español<option value="et">Eesti<option value="fa">فارسی<option value="fi">Suomi<option value="fr">Français<option value="gl">Galego<option value="he">עברית<option value="hu">Magyar<option value="id">Bahasa Indonesia<option value="it">Italiano<option value="ja">日本語<option value="ka">ქართული<option value="ko">한국어<option value="lt">Lietuvių<option value="ms">Bahasa Melayu<option value="nl">Nederlands<option value="no">Norsk<option value="pl">Polski<option value="pt">Português<option value="pt-br">Português (Brazil)<option value="ro">Limba Română<option value="ru">Русский<option value="sk">Slovenčina<option value="sl">Slovenski<option value="sr">Српски<option value="ta">த‌மிழ்<option value="th">ภาษาไทย<option value="tr">Türkçe<option value="uk">Українська<option value="vi">Tiếng Việt<option value="zh">简体中文<option value="zh-tw">繁體中文</select><script nonce="MDk1Y2I2Zjk0NGY4MzYxNjg5NDBkZGIwYjc3MDRhNzY=">qsl('select').onchange = function () { this.form.submit(); };</script> <input type='submit' value='Usar' class='hidden'>
+<input type='hidden' name='token' value='91164:839668'>
+</div>
+</form>
+<form action="" method="post">
+<p class="logout">
+<input type="submit" name="logout" value="Cerrar sesión" id="logout">
+<input type="hidden" name="token" value="609469:321365">
+</p>
+</form>
+<div id="menu">
+<h1>
+<a href='https://www.adminer.org/' target="_blank" rel="noreferrer noopener" id='h1'>Adminer</a> <span class="version">4.7.1</span>
+<a href="https://www.adminer.org/#download" target="_blank" rel="noreferrer noopener" id="version"></a>
+</h1>
+<script src='adminer.php?file=jush.js&amp;version=4.7.1' nonce="MDk1Y2I2Zjk0NGY4MzYxNjg5NDBkZGIwYjc3MDRhNzY="></script>
+<script nonce="MDk1Y2I2Zjk0NGY4MzYxNjg5NDBkZGIwYjc3MDRhNzY=">
+var jushLinks = { sql: [ 'adminer.php?username=root&db=proyecto&table=$&', /\b(material_bibliografico|multa|prestamo|prolongar|solicitud|usuarios)\b/g ] };
+jushLinks.bac = jushLinks.sql;
+jushLinks.bra = jushLinks.sql;
+jushLinks.sqlite_quo = jushLinks.sql;
+jushLinks.mssql_bra = jushLinks.sql;
+bodyLoad('5.5', true);
+</script>
+<form action="">
+<p id="dbs">
+<input type="hidden" name="username" value="root"><span title='base de datos'>DB</span>: <select name='db'><option value=""><option>estilo_visual<option>fevel<option>fevel_inventario<option>huellas<option>information_schema<option>mysql<option>performance_schema<option selected>proyecto</select><script nonce="MDk1Y2I2Zjk0NGY4MzYxNjg5NDBkZGIwYjc3MDRhNzY=">mixin(qsl('select'), {onmousedown: dbMouseDown, onchange: dbChange});</script>
+<input type='submit' value='Usar' class='hidden'>
+<input type='hidden' name='dump' value=''></p></form>
+<p class='links'><a href='adminer.php?username=root&amp;db=proyecto&amp;sql='>Comando SQL</a>
+<a href='adminer.php?username=root&amp;db=proyecto&amp;import='>Importar</a>
+<a href='adminer.php?username=root&amp;db=proyecto&amp;dump=' id='dump' class='active '>Exportar</a>
+<a href="adminer.php?username=root&amp;db=proyecto&amp;create=">Crear tabla</a>
+<ul id='tables'><script nonce="MDk1Y2I2Zjk0NGY4MzYxNjg5NDBkZGIwYjc3MDRhNzY=">mixin(qs('#tables'), {onmouseover: menuOver, onmouseout: menuOut});</script>
+<li><a href="adminer.php?username=root&amp;db=proyecto&amp;select=material_bibliografico" class='select'>registros</a> <a href="adminer.php?username=root&amp;db=proyecto&amp;table=material_bibliografico" class='structure' title='Mostrar estructura'>material_bibliografico</a>
+<li><a href="adminer.php?username=root&amp;db=proyecto&amp;select=multa" class='select'>registros</a> <a href="adminer.php?username=root&amp;db=proyecto&amp;table=multa" class='structure' title='Mostrar estructura'>multa</a>
+<li><a href="adminer.php?username=root&amp;db=proyecto&amp;select=prestamo" class='select'>registros</a> <a href="adminer.php?username=root&amp;db=proyecto&amp;table=prestamo" class='structure' title='Mostrar estructura'>prestamo</a>
+<li><a href="adminer.php?username=root&amp;db=proyecto&amp;select=prolongar" class='select'>registros</a> <a href="adminer.php?username=root&amp;db=proyecto&amp;table=prolongar" class='structure' title='Mostrar estructura'>prolongar</a>
+<li><a href="adminer.php?username=root&amp;db=proyecto&amp;select=solicitud" class='select'>registros</a> <a href="adminer.php?username=root&amp;db=proyecto&amp;table=solicitud" class='structure' title='Mostrar estructura'>solicitud</a>
+<li><a href="adminer.php?username=root&amp;db=proyecto&amp;select=usuarios" class='select'>registros</a> <a href="adminer.php?username=root&amp;db=proyecto&amp;table=usuarios" class='structure' title='Mostrar estructura'>usuarios</a>
+</ul>
+</div>
+<script nonce="MDk1Y2I2Zjk0NGY4MzYxNjg5NDBkZGIwYjc3MDRhNzY=">setupSubmitHighlight(document);</script>
